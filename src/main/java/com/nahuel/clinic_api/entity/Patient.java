@@ -1,15 +1,14 @@
 package com.nahuel.clinic_api.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity //referenciando que es una entidad
-@Data // para los getters y setters
+@Getter
+@Setter
 @NoArgsConstructor // genera un constructor de la clase vacio ej: Patient()
 @AllArgsConstructor // genera un constructor de la clase con sus argumentos ej: Patient(Patient patient)
 @Builder // para poder usar build en el objeto patient ej: patient.builder.atributos.build
@@ -18,11 +17,10 @@ public class Patient {
 
     @Id //referencia que el atributo id es la clave primaria en la db
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "firstName")
+    private String firstName;
 
     @Column(name = "lastName")
     private String lastName;
@@ -41,5 +39,8 @@ public class Patient {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @OneToMany
+    private List<Appointment> appointments;
 
 }
