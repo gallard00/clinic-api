@@ -27,6 +27,9 @@ public class Appointment {
     @Column(name = "date")
     private LocalDate date;
 
+    private String reason;
+    private String notes;
+
     @Enumerated(EnumType.STRING)
     private AppointmentStatus appointmentStatus;
 
