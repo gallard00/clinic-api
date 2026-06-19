@@ -3,7 +3,6 @@ package com.nahuel.clinic_api.controller;
 import com.nahuel.clinic_api.dto.request.PractitionerResquestDto;
 import com.nahuel.clinic_api.dto.response.PractitionerResponseDto;
 import com.nahuel.clinic_api.service.PractitionerService;
-import com.nahuel.clinic_api.service.impl.PractitionerServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
